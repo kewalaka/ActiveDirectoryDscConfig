@@ -1,0 +1,6 @@
+Nodename: SimpleInstallTest
+
+Configurations:
+  - ADControllerConfig
+
+ADControllerConfig:
