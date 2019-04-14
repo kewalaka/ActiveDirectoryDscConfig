@@ -65,7 +65,8 @@ begin {
     $env:PSModulePath = Join-Path -Path $PShome -ChildPath Modules
     $Env:PSModulePath = (Join-Path $BuildOutput 'modules') + ';' + $Env:PSModulePath
     $Env:PSModulePath = $PSScriptRoot + ';' + $Env:PSModulePath
-
+    $Env:PSModulePath = 'C:\Program Files\AppVeyor\BuildAgent\Modules' + ';' + $Env:PSModulePath
+    
     function Resolve-Dependency {
         [CmdletBinding()]
         param()
