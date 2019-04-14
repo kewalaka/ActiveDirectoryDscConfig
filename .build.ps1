@@ -62,10 +62,9 @@ begin {
         $BuildOutput = Join-Path -Path $PSScriptRoot -ChildPath $BuildOutput
     }
     
-    $env:PSModulePath = Join-Path -Path $PShome -ChildPath Modules
+    # add the build tools & the resource to the PS module path
     $Env:PSModulePath = (Join-Path $BuildOutput 'modules') + ';' + $Env:PSModulePath
     $Env:PSModulePath = $PSScriptRoot + ';' + $Env:PSModulePath
-    $Env:PSModulePath = 'C:\Program Files\AppVeyor\BuildAgent\Modules' + ';' + $Env:PSModulePath
     
     function Resolve-Dependency {
         [CmdletBinding()]
